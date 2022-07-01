@@ -1,6 +1,7 @@
 # dvd-screensaver
 
-A DVD screensaver animation program for the terminal using the awesome [termbox2](https://github.com/termbox/termbox2) library. I made this mainly as an activity to learn [termbox2](https://github.com/termbox/termbox2) (it's amazing!), so expect problems (I'd be surprised if anyone even sees, if not uses this).
+A DVD screensaver animation program for the terminal using the awesome [termbox2](https://github.com/termbox/termbox2) library. I made this mainly as an activity to learn [termbox2](https://github.com/termbox/termbox2) (it's amazing!), so expect problems (I'd be surprised if anyone even sees, if not uses this). You just run it and watch, and you can quit by pressing `q`.
+![demonstration of the program](demonstration.gif)
 
 ## Build
 
