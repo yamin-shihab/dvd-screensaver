@@ -1,8 +1,6 @@
 builddir = build
 cflags = -Wall -Wextra -Wvla -Wpedantic -Wno-unused-result -std=c99 -Ofast
 libs = -ltermbox
-bin = dvd-screensaver
-installdir = /usr/local/bin
 
 rule mkdir
     command = mkdir $in
@@ -16,10 +14,6 @@ rule linkstrip
     command = cc $in $libs -o $out && strip $out
     description = Link the given .o files, output an executable, and strip the executable.
 
-rule install
-    command = cp build/$bin $installdir
-    description = Installs the program into $$installdir.
-
 build build: mkdir build
 build build/main.o: compile src/main.c
-build build/$bin: linkstrip build/main.o
+build build/dvd-screensaver: linkstrip build/main.o
