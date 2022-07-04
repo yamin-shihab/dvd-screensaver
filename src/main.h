@@ -17,11 +17,8 @@ struct DVDLogo {
 };
 
 
-uint32_t
-char_to_unicode(const char c);
-
 bool
-quit_check();
+quit_check(const int ms);
 
 void
 screen_draw(struct DVDLogo *dvd);
@@ -33,9 +30,9 @@ void
 dvd_move(struct DVDLogo *dvd);
 
 void
-main_loop();
+main_loop(void);
 
 int
-terminal_size_check();
+terminal_size_check(void);
 
 #endif

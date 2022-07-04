@@ -1,6 +1,6 @@
 builddir = build
-cflags = -Wall -Wextra -Wvla -Wpedantic -Wno-unused-result -std=c99 -Ofast
-libs = -ltermbox
+cflags = -g -Wall -Wextra -Wvla -Wpedantic -Wno-unused-result -std=c99 -O0
+ldflags = -L/usr/local/lib -ltermbox -static
 
 rule mkdir
     command = mkdir $in
@@ -11,7 +11,7 @@ rule compile
     description = Compile the given .c file, and output a .o file in obj/.
 
 rule linkstrip
-    command = cc $in $libs -o $out && strip $out
+    command = cc $in $ldflags -o $out
     description = Link the given .o files, output an executable, and strip the executable.
 
 build build: mkdir build

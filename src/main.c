@@ -6,10 +6,10 @@
 
 
 bool
-quit_check()
+quit_check(const int ms)
 {
 	struct tb_event event = { 0 };
-	tb_peek_event(&event, 64);
+	tb_peek_event(&event, ms);
 	if (event.ch == 'q')
 		return true;
 	return false;
@@ -36,8 +36,8 @@ col_get(struct DVDLogo *dvd)
 void
 screen_draw(struct DVDLogo *dvd)
 {
-	uintattr_t fg = TB_BLACK | TB_BOLD | TB_ITALIC;
-	uintattr_t bg = col_get(dvd);
+	const uintattr_t fg = TB_BLACK | TB_BOLD | TB_ITALIC;
+	const uintattr_t bg = col_get(dvd);
 	tb_set_clear_attrs(fg, fg);
 	tb_clear();
 	tb_set_cell(dvd->pos.x, dvd->pos.y, 'D', fg, bg);
@@ -64,8 +64,10 @@ dvd_move(struct DVDLogo *dvd)
 
 
 void
-main_loop()
+main_loop(void)
 {
+	const int FPS = 16;
+	const double MS_PER_FRAME = 1000 / FPS;
 	srand(time(NULL));
 	struct DVDLogo dvd = {
 		.pos = { .x = rand() % tb_width(), .y = rand() % tb_height() },
@@ -73,16 +75,16 @@ main_loop()
 		.col = 0
 	};
 	while (true) {
-		if (quit_check())
-			return;
 		dvd_move(&dvd);
 		screen_draw(&dvd);
+		if (quit_check(MS_PER_FRAME))
+			return;
 	}
 }
 
 
 int
-terminal_size_check()
+terminal_size_check(void)
 {
 	if (tb_height() < 10 || tb_width() < 10) {
 		printf("Terminal size too small. How do you think I can show anything?");
