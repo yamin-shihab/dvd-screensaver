@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Wextra -Wvla -Wpedantic -Wno-unused-result -std=c99 -Ofast
+CFLAGS = -Wall -Wextra -Wvla -std=c99 -pedantic -Ofast
 LDFLAGS = -ltermbox -static
 
 : foreach src/*.c | build |> cc -c %f $(CFLAGS) -o %o |> build/%B.o
