@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <termbox.h>
-#include "dvd-screensaver.h"
+#include "dvd_screensaver.h"
 
 
 bool

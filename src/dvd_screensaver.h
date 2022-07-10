@@ -1,5 +1,5 @@
-#ifndef MAIN
-#define MAIN
+#ifndef DVD_SCREENSAVER
+#define DVD_SCREENSAVER
 
 #include <stdbool.h>
 #include <termbox.h>
