@@ -6,11 +6,12 @@ A DVD screensaver animation program for the terminal using the awesome [termbox2
 
 ## Build/Install
 
-To build this, you must have [termbox2](https://github.com/termbox/termbox2) installed and the ninja build system. You should also be sure to have a valid c compiler in `$PATH` called `cc` (I just used `ln -s /usr/local/bin/cc /usr/bin/clang`, but you can use `gcc` or something else).
+To build this, you must have [termbox2](https://github.com/termbox/termbox2) installed and the [tup](https://gittup.org/tup/index.html) build system. You should also be sure to have a valid c compiler in `$PATH` called `cc` (I just used `ln -s /usr/local/bin/cc /usr/bin/clang`, but you can use `gcc` or something else).
 ```bash
 git clone https://github.com/yamin-shihab/dvd-screensaver.git # Clone the project onto your computer
 cd dvd-screensaver # Move into the project directory
-ninja # Build the program
+mkdir build # Make a build directory for build artifacts
+tup # Build the program
 ```
 The `dvd-screensaver` executable can then be found in the `build/` directory. You can also install it with:
 ```bash

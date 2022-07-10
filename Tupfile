@@ -1,0 +1,5 @@
+CFLAGS = -Wall -Wextra -Wvla -Wpedantic -Wno-unused-result -std=c99 -Ofast
+LDFLAGS = -ltermbox -static
+
+: foreach src/*.c | build |> cc -c %f $(CFLAGS) -o %o |> build/%B.o
+: build/*.o | build |> cc %f $(LDFLAGS) -o %o |> build/dvd-screensaver
