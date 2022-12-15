@@ -14,14 +14,14 @@
 
 // Used to represent a position or direction in the terminal
 struct Vec2 {
-	int x, y;
+    int x, y;
 };
 
 // Has the position, direction, and current color of the DVD logo
 struct DVDLogo {
-	struct Vec2 pos;
-	struct Vec2 dir;
-	int color;
+    struct Vec2 pos;
+    struct Vec2 dir;
+    int color;
 };
 
 // Returns true if terminal is too small, otherwise false
