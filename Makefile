@@ -1,6 +1,6 @@
 # pls don't make fun of my pathetic makefile
 
-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Ofast -ltermbox -o build/dvd
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -Os -o build/dvd -ltermbox2
 
 all: build
 

@@ -1,9 +1,10 @@
+#include "dvd.h"
+#define TB_IMPL
+#include <termbox2.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-#include <termbox.h>
-#include "dvd.h"
 
 int
 main(void) {

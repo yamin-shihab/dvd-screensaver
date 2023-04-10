@@ -1,8 +1,8 @@
 #ifndef DVD_SCREENSAVER
 #define DVD_SCREENSAVER
 
+#include <termbox2.h>
 #include <stdbool.h>
-#include <termbox.h>
 
 // Frames per second and milliseconds per frame for program, and speed of DVD logo movement
 #define FPS 24
