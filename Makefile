@@ -1,11 +1,13 @@
 # pls don't make fun of my pathetic makefile
 
-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Os -o build/dvd -ltermbox2
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -Os -static -o build/dvd
 
 all: build
 
 build:
-	mkdir -p build && $(CC) src/dvd.c $(CFLAGS)
+	mkdir -p build
+	$(CC) src/dvd.c $(CFLAGS)
+	strip build/dvd
 
 install: build
 	cp build/dvd /usr/local/bin
